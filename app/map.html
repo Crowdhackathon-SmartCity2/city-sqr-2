@@ -22,6 +22,8 @@
 
   </head>
   <body>
+
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -81,27 +83,15 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <div id="map" class="map"></div>
-          <script type="text/javascript">
-            var map = new ol.Map({
-              target: 'map',
-              layers: [
-                new ol.layer.Tile({
-                  source: new ol.source.OSM()
-                })
-              ],
-              view: new ol.View({
-                center: ol.proj.fromLonLat([37.93052, 23.74783]),
-                zoom: 4
-              })
-            });
-          </script>
+          <div id="map" class="map">
+
+          </div>
         </div>
       </div>
     </div>
 
-    <script type="text/javascript" src="client.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="map.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   </body>
