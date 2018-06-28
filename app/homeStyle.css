@@ -36,3 +36,27 @@ h5{
   right: 5%;
   top: 25%;
 }
+
+.progress-bar-success{
+  width: 25%;
+  position: absolute;
+  right: 5%;
+  top: 25%;
+}
+
+
+.btn-success{
+  position: absolute;
+  left: 80%;
+  top: 60%;
+  width: 10%;
+  height: 35%; 
+}
+
+.btn-info{
+  position: absolute;
+  left: 80%;
+  top: 60%;
+  width: 10%;
+  height: 35%; 
+}

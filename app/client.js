@@ -32,3 +32,16 @@ $( ".progress-bar" ).each(function(index) {
     console.log( index + ": " + percentage[index] );
     $( this ).width(percentage[index] + "%");
 });
+
+$( ".progress-bar-success" ).each(function(index) {
+    console.log( index + ": " + percentage[index] );
+    $( this ).width(percentage[index] + "%");
+});
+
+$( ".btn" ).each(function(index) {
+    console.log( "Fund");
+});
+
+$( ".btn" ).each(function(index) {
+    console.log( "Done!");
+});
