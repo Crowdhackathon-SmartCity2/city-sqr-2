@@ -1,0 +1,44 @@
+body{
+    padding-top: 60px;
+    width: 97.5%;
+  }
+  
+  #topLevelRow {
+    height: 100%;
+  }
+  
+  #filterJumbo{
+    height: 77%;
+  }
+  
+  .fullWidth{
+    width: 100%;
+  }
+  
+  .jumbotron{
+    position: relative;
+  }
+  
+  h3{
+    position: absolute;
+    top: 0%;
+    left: 5%;
+  }
+  
+  h5{
+    position: absolute;
+    left: 5%;
+  }
+
+  #thumbnailContainer{
+    width: 60%;
+    margin: 5% auto;
+  }
+
+
+.btn-success{
+  position: absolute;
+  bottom:10%;
+  width: 70%;
+  height: 10%; 
+}
