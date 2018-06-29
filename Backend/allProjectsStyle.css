@@ -42,3 +42,16 @@ body{
   width: 70%;
   height: 10%; 
 }
+
+.progress-bar-success{
+  position: relative;
+
+}
+
+.btn-info{
+  position: relative;
+  left:4%;
+  top: 60%;   
+  width: 10%;
+  height: 35%; 
+}
