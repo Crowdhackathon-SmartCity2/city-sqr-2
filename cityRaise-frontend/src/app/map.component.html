@@ -89,9 +89,12 @@
       </div>
     </div>
 
-    <div *ngFor="let coord of webService.coordsList | async">
-        {{ addMarker(coord[0],coord[1]) }}
-    </div>
+    <script>
+        angular.forEach(webService.coordsList, function(value,key){
+                console.log(value[0] + " and " + value[1]);
+                addMarker(value[0],value[1]);
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <!-- <script src="map.js"></script> -->
