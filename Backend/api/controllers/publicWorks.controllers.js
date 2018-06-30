@@ -37,3 +37,23 @@ module.exports.publicWorksGetAll = function (req, res) {
                 .json(docs);
         });
 };
+
+module.exports.publicWorksGetAllCoords = function (req, res) {
+    var db = dbConnect.get();
+    // var collection = db.collection('car');
+    // var start = 0;
+    // var number = 6;
+
+    PublicWork
+        .find({},{'coords':true,'_id':false})
+        // .sort({"brand": 1})
+        // .skip(start)
+        // .limit(number)
+        .exec(function (err, docs) {
+            console.log("Retrieved data for " + docs.length + " coords" /*+ "(start = " + start + ", number = " + number + ")"*/);
+            // console.log("PHOTO: " + docs[0].photos[0]);
+            res
+                .status(200)
+                .json(docs);
+        });
+};

@@ -10,12 +10,10 @@ var publicWorksController = require('../controllers/publicWorks.controllers.js')
 router
     .route('/publicWorks')
     .get(publicWorksController.publicWorksGetAll);
-    // .post(publicWorksController.carsAddOne);
 
-// router
-//     .route('/carsGetFieldValues/:field')
-//     .get(carsController.carsGetFieldValues);
-//
+router
+    .route('/coords')
+    .get(publicWorksController.publicWorksGetAllCoords);
 
 
 module.exports = router;
