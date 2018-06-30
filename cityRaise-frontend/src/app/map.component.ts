@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {WebService} from './web.service';
 
-import OlMap from '../../node_modules/ol/map';
-import OlXYZ from '../../node_modules/ol/source/xyz';
-import OlTileLayer from '../../node_modules/ol/layer/tile';
-import OlView from '../../node_modules/ol/view';
+import OlMap from '../../node_modules/ol/Map.js';
+// import OlXYZ from '../../node_modules/ol/source/xyz';
+// import OlTileLayer from '../../node_modules/ol/layer/tile';
+import OlView from '../../node_modules/ol/View.js';
 import {fromLonLat} from '../../node_modules/ol/proj';
 import OSM from '../../node_modules/ol/source/OSM.js';
 import Tile from '../../node_modules/ol/layer/Tile.js';
@@ -15,6 +15,8 @@ import VectorLayer from '../../node_modules/ol/layer/Vector.js';
 import Feature from '../../node_modules/ol/Feature';
 import Point from '../../node_modules/ol/geom/Point.js';
 import {transform} from '../../node_modules/ol/proj';
+import {element} from 'protractor';
+
 
 @Component({
   selector: 'app-map',
@@ -24,74 +26,81 @@ import {transform} from '../../node_modules/ol/proj';
 
 export class MapComponent implements OnInit {
 
-    map: OlMap;
-    source: OlXYZ;
-    layer: OlTileLayer;
-    view: OlView;
-    markerSource = new Vector();
-    
-    coord = [];
-    
-    constructor(private webService: WebService/*, private authService: AuthService*/) {
-    }
+  map: OlMap;
+  // source: OlXYZ;
+  // layer: OlTileLayer;
+  view: OlView;
+  markerSource = new Vector();
 
-    addMarker (lon, lat) {
-        console.log('lon:', lon);
-        console.log('lat:', lat);
-      
-        var iconFeatures = [];
-      
-        var iconFeature = new Feature({
-          geometry: new Point(transform([lon, lat], 'EPSG:4326',
-            'EPSG:3857'))
-        });
-        this.markerSource.addFeature(iconFeature);
-    }
+  coords;
 
-    zeroCoord(){
-        this.coord = [];
-    }
+  constructor(private webService: WebService/*, private authService: AuthService*/) {
+  }
 
-    ngOnInit() {
-        // this.source = new OlXYZ({
-        //     // Tiles from Mapbox (Light)
-        //     url: 'https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
-        // });
+  setCoordsList() {
+    // this.coords = this.webService.coords_list;
+    // while (this.webService.coords_list === undefined) {};
+    this.webService.coords_list.subscribe(elem => {
+      // console.log(elem[1].coords[0]);
 
-        // this.layer = new OlTileLayer({
-        //     source: this.source
-        // });
+      for (const e of Object.values(elem)) {
+        this.addMarker(e.coords[0], e.coords[1]);
+      }
+      // const values = Object.keys(elem);
+      // console.log('VALUES: ' + values);
+      // elem.forEach(e => {
+      //   this.addMarker(e.coords[0], e.coords[1]);
+      // });
+    });
+  }
 
-        this.webService.getAllPublicWorkCoords();
+  addMarker(lon, lat) {
+    // console.log('lon:', lon);
+    // console.log('lat:', lat);
 
-        var markerStyle = new Style({
-            image: new Icon(/** @type {olx.style.IconOptions} */ ({
-                anchor: [0.5, 46],
-                anchorXUnits: 'fraction',
-                anchorYUnits: 'pixels',
-                opacity: 0.75,
-                src: 'https://openlayers.org/en/v4.6.4/examples/data/icon.png'
-            }))
-        });
+    const iconFeature = new Feature({
+      geometry: new Point(transform([lon, lat], 'EPSG:4326',
+        'EPSG:3857'))
+    });
+    this.markerSource.addFeature(iconFeature);
+  }
 
-        this.view = new OlView({
-            center: fromLonLat([6.661594, 50.433237]),
-            zoom: 5,
-          });
+  // zeroCoord() {
+  //   this.coord = [];
+  // }
 
-        this.map = new OlMap({
-            target: 'map',
-            layers: [
-                new Tile({
-                    source: new OSM(),
-                }),
-                new VectorLayer({
-                    source: this.markerSource,
-                    style: markerStyle,
-                  }),
-            ],
-            view: this.view
-        });
+  ngOnInit() {
 
-    }
+    this.webService.getAllPublicWorkCoords();
+
+    const markerStyle = new Style({
+      image: new Icon(/** @type {olx.style.IconOptions} */ ({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: '../assets/marker.svg'
+      }))
+    });
+
+    this.view = new OlView({
+      center: fromLonLat([6.661594, 50.433237]),
+      zoom: 5,
+    });
+
+    this.map = new OlMap({
+      target: 'map',
+      layers: [
+        new Tile({
+          source: new OSM(),
+        }),
+        new VectorLayer({
+          source: this.markerSource,
+          style: markerStyle,
+        }),
+      ],
+      view: this.view
+    });
+
+  }
 }
