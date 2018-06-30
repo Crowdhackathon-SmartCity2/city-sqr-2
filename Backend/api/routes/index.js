@@ -15,5 +15,4 @@ router
     .route('/coords')
     .get(publicWorksController.publicWorksGetAllCoords);
 
-
 module.exports = router;
