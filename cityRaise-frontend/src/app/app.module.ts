@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {MapComponent} from './map.component';
 import {NavComponent} from './nav.component';
+import {ContactComponent} from './contact.component';
 // import { AuthService } from './auth.service';
 // import { CallbackComponent } from './callback.component';
 // import { NavComponent } from './nav.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'map',
     component: MapComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   }
 //   // ,
 //   // {
@@ -44,7 +49,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, PublicWorksComponent,/*, HomeComponent, CarComponent, CallbackComponent, NavComponent*/
-    MapComponent, NavComponent
+    MapComponent, NavComponent, ContactComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
