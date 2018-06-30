@@ -2,10 +2,8 @@ body{
   padding-top: 60px;
   width: 97.5%;
 }
-#background {
-   
-#topLevelRow {
 
+#topLevelRow {
   height: 100%;
 }
 
@@ -45,11 +43,11 @@ h5{
 }
 
 
-.btn-success{
+.btn-default{
   position: absolute;
   left: 80%;
   top: 60%;
-  width: 10%;
+  width: 40%;
   height: 35%; 
 }
 
@@ -60,7 +58,3 @@ h5{
   width: 10%;
   height: 35%; 
 }
-
-
-
-
