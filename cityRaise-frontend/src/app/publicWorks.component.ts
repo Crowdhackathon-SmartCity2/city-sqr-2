@@ -39,6 +39,17 @@ export class PublicWorksComponent implements OnInit {
       elements[this.i].setAttribute('style', 'width: ' + width + '%');
     }
     console.log(elements[this.i]);
+
+    let children;
+
+    if (elements[this.i] !== undefined) {
+      children = elements[this.i].getElementsByTagName('span') as HTMLCollectionOf<HTMLElement>;
+      if (children[0] !== undefined) {
+        children[0].appendChild(document.createTextNode(Math.round(width) + '%'));
+      }
+    }
+
+
     this.i++;
 
     // $( ".progress-bar" ).each(function(index) {

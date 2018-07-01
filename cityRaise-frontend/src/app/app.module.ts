@@ -11,8 +11,8 @@ import {NavComponent} from './nav.component';
 import {ContactComponent} from './contact.component';
 import {AllProjectsComponent} from './allprojects.component';
 import {ProfileComponent} from './profile.component';
-import {ProjectPageComponent} from './projectpage.component';
-import {WelcomePageComponent} from './welcomepage.component';
+import {ProjectPageComponent} from './projectPage.component';
+import {WelcomePageComponent} from './welcomePage.component';
 import { VolunteerComponent } from './volunteer.component';
 import {FundComponent} from './fund.component';
 
@@ -46,7 +46,7 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  //DIMITRIS STUFF - IF THIS DOESNT WORK DELETE
+  // DIMITRIS STUFF - IF THIS DOESNT WORK DELETE
   {
     path: 'allProjects',
     component: AllProjectsComponent

@@ -45,8 +45,12 @@
             <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
                  id="progress">
               {{showPercentage(publicWork.current_funds, publicWork.required_funds)}}
+              <!--<span> {{ publicWork.current_funds[0] + publicWork.current_funds[1] + ' / ' + publicWork.required_funds}} </span>-->
+              <span></span>
             </div>
+            <!--{{ publicWork.current_funds[0] + publicWork.current_funds[1] + ' / ' + publicWork.required_funds}}-->
           </div>
+
           <div class="container">
             <a routerLink="/fund">
               <button class="btn btn-success" type="submit">fund</button>
