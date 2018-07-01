@@ -24,12 +24,10 @@
 
 
 <app-nav></app-nav>
-<div class="container-fluid row" id="topLevelRow" style="display: flex">
+<div class="container-fluid row" id="topLevelRow" style="display: flex;padding-top: 3%">
 
   <div class="col-md-4">
-    <div class="jumbotron" id="filterJumbo">
-      <p>Filters</p>
-    </div>
+    <img src="./assets/ad.jpg" style="width: 520px;height: 360px;align-self: center;">
   </div>
 
   <div class="col-md-8">
@@ -50,7 +48,9 @@
             </div>
           </div>
           <div class="container">
-            <button class="btn btn-success" type="submit">fund</button>
+            <a routerLink="/fund">
+              <button class="btn btn-success" type="submit">fund</button>
+            </a>
           </div>
         </div>
       </div>

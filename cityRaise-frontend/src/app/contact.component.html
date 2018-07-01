@@ -26,60 +26,65 @@
   <form id="contact-form" method="post" action="contact.php" role="form">
 
       <div class="messages"></div>
-
-      <div class="controls">
-
-          <div class="row">
-              <div class="col-md-4 col-md-offset-3">
-
-                  <div class="form-group">
-                      <label for="form_name">Firstname *</label>
-                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your first name *" required="required" data-error="Firstname is required.">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-
-              <div class="col-md-4 col-md-offset-3">
-                    <div class="form-group">
-                      <label for="form_lastname">Lastname *</label>
-                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your last name *" required="required" data-error="Lastname is required.">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
+      <div class="row" style="padding-top: 5%; margin-left: 5%">
+          <div class="col-md-4" style="padding-top: 2%">
+            <img src="http://www.worleyco.com/wp-content/uploads/2015/06/Contact-Us.jpg" style="width: 800px; height: 600px;">
           </div>
-          <div class="row">
-              <div class="col-md-4 col-md-offset-3">
-                    <div class="form-group">
-                      <label for="form_email">Email *</label>
-                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-md-offset-3">
-                    <div class="form-group">
-                      <label for="form_phone">Phone</label>
-                      <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-md-4 col-md-offset-3">
-                    <div class="form-group">
-                      <label for="form_message">Message *</label>
-                      <textarea id="form_message" name="message" class="form-control" placeholder="Send your message to CityRaise *" rows="14 " required="required" data-error="Please,leave us a message."></textarea>
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-              <div class="col-md-8 col-md-offset-3">
-                        <button class="btn btn-default" type="submit">Send</button>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <p class="text-muted"><strong>*</strong> These fields can't be blank.
-              </div>
-          </div>
-      </div>
+        <div class="col-md-8">
+            <div class="controls">
 
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-3">
+
+                        <div class="form-group">
+                            <label for="form_name">Όνομα *</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Εισάγετε Όνομα *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-3">
+                            <div class="form-group">
+                            <label for="form_lastname">Επίθετο *</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Εισάγετε Επίθετο *" required="required" data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-3">
+                            <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Εισάγετε το email σας *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-3">
+                            <div class="form-group">
+                            <label for="form_phone">Τηλέφωνο</label>
+                            <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Εισάγετε το τηλέφωνό σας">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-3">
+                            <div class="form-group">
+                            <label for="form_message">Μήνυμα *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Εισάγετε το μήνυμα που θέλετε να στείλετε προς τη CityRaise *" rows="14 " required="required" data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-3">
+                                <button class="btn btn-primary" type="submit">Αποστολή</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted"><strong>*</strong> Τα πεδία αυτά δεν μπορούν να είναι κενά.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </form>

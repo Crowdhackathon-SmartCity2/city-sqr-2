@@ -9,6 +9,13 @@ import {AppComponent} from './app.component';
 import {MapComponent} from './map.component';
 import {NavComponent} from './nav.component';
 import {ContactComponent} from './contact.component';
+import {AllProjectsComponent} from './allprojects.component';
+import {ProfileComponent} from './profile.component';
+import {ProjectPageComponent} from './projectpage.component';
+import {WelcomePageComponent} from './welcomepage.component';
+import { VolunteerComponent } from './volunteer.component';
+import {FundComponent} from './fund.component';
+
 // import { AuthService } from './auth.service';
 // import { CallbackComponent } from './callback.component';
 // import { NavComponent } from './nav.component';
@@ -25,6 +32,10 @@ const routes: Routes = [
 //   // },
   {
     path: '',
+    component: WelcomePageComponent
+  },
+  {
+    path: 'home',
     component: PublicWorksComponent
   },
   {
@@ -34,22 +45,34 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  //DIMITRIS STUFF - IF THIS DOESNT WORK DELETE
+  {
+    path: 'allProjects',
+    component: AllProjectsComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'projectPage',
+    component: ProjectPageComponent
+  },
+  {
+    path: 'volunteer',
+    component: VolunteerComponent
+  },
+  {
+    path: 'fund',
+    component: FundComponent
   }
-//   // ,
-//   // {
-//   //   path: 'cars/:id',
-//   //   component: CarComponent
-//   // },
-//   // {
-//   //   path: 'callback',
-//   //   component: CallbackComponent
-//   // }
 ];
 
 @NgModule({
   declarations: [
     AppComponent, PublicWorksComponent,/*, HomeComponent, CarComponent, CallbackComponent, NavComponent*/
-    MapComponent, NavComponent, ContactComponent
+    MapComponent, NavComponent, ContactComponent, AllProjectsComponent, ProfileComponent, ProjectPageComponent, WelcomePageComponent, VolunteerComponent, FundComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule
